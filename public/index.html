@@ -1,43 +1,182 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sleazy Adventure Club</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        @font-face {
+            font-family: font;
+            src: url(./fonts/font.ttf);
+        }
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+        #timer {
+            background: white;
+            /* color: white; */
+            font-family: font;
+            /* font-size: 1.5rem; */
+        }
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 first-slid">
+                    <div class="button-area">
+                        <a style="cursor: pointer;" class="connect_btn"><img class="button-head"
+                                src="./assets/images/head-button.png" alt=""></a>
+                        <a href="http://twitter.com/sleazy_sloths" target="_blank"><img class="social-link"
+                                src="./assets/images/twitter.png" alt=""></a>
+                    </div>
+                    <div class="hero-section">
+                        <div class="hero-img">
+                            <img class="" src="./assets/images/Hero_photo.png" alt="">
+                        </div>
+                        <div class="hero-text">
+                            <a href="#">
+                                <img src="./assets/images/Asset 1.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="stitch">
+
+    </div>
+    <style>
+        a {
+            font-family: 'font';
+            cursor: pointer;
+            font-size: 2rem;
+            color: black;
+        }
+
+        a:hover {
+            font-family: 'font';
+            cursor: pointer;
+            font-size: 2rem;
+            color: black;
+        }
+    </style>
+    <section class="mint-section">
+        <div class="row">
+            <div class="col-md-12 first-slid">
+                <div class="hero-section">
+                    <div class="mint-top">
+                        <img class="top-img" class="" src="./assets/images/second-sec-photo.png" alt="">
+                    </div>
+                    <div class="sec-button">
+                        <!-- Timer -->
+                        <h1 id="timer">
+                            00D 00H 00M 00S
+                        </h1>
+                        <!-- <img class="button-head" src="./assets/images/head-button.png" alt=""> -->
+                    </div>
+
+                    <div class="button-desg">
+                        <div id="mintCon" class="hidden">
+
+                            <a class="hidden" style="cursor: pointer;" id="WLmint_btn">
+                                <img src="./assets/images/button.png" alt="">
+                            </a>
+
+                            <span class='hidden' id="user_address"></span>
+                            <span class='hidden' id="hash_proof"></span>
+
+                            <a class="hidden" style="cursor: pointer;" id="Publicmint_btn">
+                                <img src="./assets/images/button.png" alt="">
+                            </a>
+
+                        </div>
+                        <div id="connect_div">
+                            <a style="cursor: pointer;" class="connect_btn">
+                                <img src="./assets/images/button.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </section>
+
+    <div class="stitch">
+    </div>
+
+    <section class="roadmap-section">
+        <div class="row">
+            <div class="col-md-12 first-slid">
+                <div class="container">
+                    <div class="on-dex">
+                        <div class="heading-png">
+                            <img class="" src="./assets/images/Roadmap_2_png.png" alt="">
+                        </div>
+                        <div class="box-info">
+                            <div class="first-box">
+                                <img src="./assets/images/info-box-one.png" alt="">
+                                <span class="box-text">
+                                    <p>WL + PUBLIC MINT, INCLUDING AN AIRDROP
+                                        FOR EVERYONE WHO MINT 2 SLOTHS.
+                                        MORE INFORMATION ABOUT BREEDING
+                                        I WILL BECOME PUBLIC AFTER SELLOUT.</p>
+                                </span>
+                            </div>
+
+                            <div class="second-box">
+                                <img src="./assets/images/info-box-2.png" alt="">
+                                <span class="second-text">
+                                    <p>STAKING IS ROLLED OUT FOR THE DINO
+                                        SLOTHS, AFTER WHICH ALL ROYALTIES WILL BE
+                                        REDISTRIBUTED TO HOLDERS.</p>
+                                </span>
+                            </div>
+
+                            <div class="third-box">
+                                <img src="./assets/images/info-box-3.png" alt="">
+                                <span class="third-text">
+                                    <p>BREEDING. THE DINO SLOTHS WILL BE
+                                        UNLEASHED UPON THE CONTINENT, WREAKING
+                                        HAVOC ON THE DEFENSLESS SLEAZY SLOTHS.</p>
+                                </span>
+                            </div>
+
+                            <div class="fourth-box">
+                                <img src="./assets/images/info-box-4.png" alt="">
+                                <span class="fourth-text">
+                                    <p>ESTABLISHING SOCIALS (COLLABORATIONS +
+                                        GIVEAWAYS), MEETING THE SNUGGLE AND
+                                        TELLING THE LEGEND OF THE MYSTERIOUS
+                                        DINO SLOTHS.</p>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div style="display: none;" id="root"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://unpkg.com/web3@latest/dist/web3.min.js"></script>
+    <script src="https://unpkg.com/web3modal"></script>
+    <script src="https://unpkg.com/@walletconnect/web3-provider"></script>
+    <script src="js/integration.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
 </html>

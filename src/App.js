@@ -1,23 +1,72 @@
-import logo from './logo.svg';
-import './App.css';
+import $ from 'jquery'
+import { useEffect } from 'react';
+/* eslint-disable */
+
+const { MerkleTree } = require('merkletreejs');
+const keccak256 = require('keccak256');
+window.Buffer = window.Buffer || require("buffer").Buffer
 
 function App() {
+
+  // Merkle tree integration
+  let proof
+  const whitelistAddresses = [
+    "0x04c63D8c2fc9DD602aeE46F12083af1DdE69C713",
+    "0x2caF424F1BcbEf1f1D7dF082c6b5677f0283f9d7",
+    "0x17AeCDc3FeD98beAc7629C78849c4444a0a2075b",
+    "0x1f9E9d8420387D6B8e74d71468Ae17b693ec537f"
+  ]
+
+  const leafNodes = whitelistAddresses.map(addr => keccak256(addr));
+  const merkleTree = new MerkleTree(leafNodes, keccak256, { sortPairs: true });
+
+  // Get the RootHash
+  // const rootHash = merkleTree.getRoot().toString('hex');
+  // console.log(rootHash)
+
+  useEffect(() => {
+    $('#WLmint_btn').click(() => {
+      const claimingAddress = $('#user_address').text()
+      for (var i = 0; i < whitelistAddresses.length; i++) {
+        if (claimingAddress === whitelistAddresses[i]) {
+          const hexProof = merkleTree.getHexProof(leafNodes[i])
+          proof = hexProof.toString()
+          break
+        } else {
+          proof = null
+        }
+      }
+      if (proof == null) {
+        document.getElementById('toast-error-text').innerHTML = "You are not whitelisted!";
+        document.getElementById('toast-error').classList.add('active');
+        document.getElementById('error-progress').classList.add('active');
+
+        let timer1 = setTimeout(() => {
+          document.getElementById('toast-error').classList.remove("active");
+        }, 5000);
+
+        let timer2 = setTimeout(() => {
+          document.getElementById('error-progress').classList.remove("active");
+        }, 5300);
+
+        document.querySelector(".close-er").addEventListener("click", () => {
+          document.getElementById('toast-error').classList.remove("active");
+
+          document.getElementById('error-progress').classList.remove("active");
+
+          clearTimeout(timer1);
+          clearTimeout(timer2);
+        });
+
+      } else {
+        $('#hash_proof').html(proof)
+        $('#WLmint_btn').off()
+      }
+    })
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
     </div>
   );
 }
