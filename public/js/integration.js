@@ -5,7 +5,7 @@ let web3Modal, hash_proof, provider, web3, contract, user_address, checkInterval
 
 let publicMint = false
 var mint_count = 1;
-var max_count = 1;
+var max_count = 2;
 var mint_cost; // Change cost here
 var chainId = 1; // should be 4 for rinkeby and 1 for mainnet
 var test = true;
@@ -73,11 +73,11 @@ async function update_mintType() {
         if (res === true) {
             publicMint = false
             // Max mint for whitelisted users
-            max_count = 2
+            set_value(2)
         } else {
             publicMint = true
             // Max mint for public
-            max_count = 6
+            set_value(6)
         }
     });
 }
@@ -122,8 +122,6 @@ async function switch_network(chainId) {
 
 async function sideworks() {
 
-    $('.connect_btn').html('.....')
-
     // update minting status
     await update_mintType()
 
@@ -142,8 +140,9 @@ function check() {
 
                     await sideworks()
 
-                    $('.connect_btn').html(truncateString(String(user_address), 10));
-                    $('#connect_div').hide()
+                    // $('.connect_btn').html(truncateString(String(user_address), 10));
+                    $('.connect_btn').hide()
+                    $('.plusCon').show()
                     // $('#user_address').html('0xA0DB7A17B3B912c5b3bCcBAD5E9f7be910a05888')
                     $('#user_address').html(user_address)
 
@@ -200,11 +199,35 @@ async function connectweb3() {
 
 }
 
+function set_value(type) {
+    if (type == 'increase') {
+        if (mint_count != max_count) {
+            mint_count++;
+        }
+    } else if (type == 'decrease') {
+        if (mint_count != 1) {
+            mint_count--;
+        }
+    }else{
+        max_count = type
+        mint_count = 1    
+    }
+    $('#mint_count').html(mint_count);
+}
+
 
 $(document).ready(() => {
     init();
 
     $('.connect_btn').click(async () => { await connectweb3(); })
+
+    $('#increase_btn').click(() => {
+        set_value('increase');
+    })
+
+    $('#decrease_btn').click(() => {
+        set_value('decrease');
+    })
 });
 
 

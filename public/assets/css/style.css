@@ -31,6 +31,8 @@ img.social-link {
     margin-left: 15px;
 }
 
+
+
 .hero {
     background-image: url('../images/hbg-1.png');
     background-repeat: no-repeat;
@@ -52,6 +54,40 @@ img.social-link {
     height: 100vh;
 }
 
+@media (max-width: 1440px) {
+    .hero {
+        background-size: cover !important;
+        height: 100% !important;
+    }
+
+    .mint-section {
+        background-size: cover !important;
+        height: 100% !important;
+    }
+
+    .roadmap-section {
+        background-size: cover !important;
+        height: 100% !important;
+    }
+}
+
+@media (max-width: 780px) {
+    .hero {
+        height: 100vh !important;
+    }
+
+    .mint-section {
+        background-size: contain !important;
+        height: 100vh !important;
+    }
+
+    .roadmap-section {
+        background-size: contain !important;
+        height: 100vh !important;
+    }
+}
+
+
 .mint-top {
     width: fit-content;
     margin: 0px auto;
@@ -63,12 +99,12 @@ img.top-img {
 
 .sec-button {
     text-align: center;
-    margin-top: 50px;
+    /* margin-top: 50px; */
 }
 
 .button-desg img {
     width: 260px;
-    margin-top: 60px;
+    /* margin-top: 60px; */
 }
 
 .hero-img {
@@ -268,12 +304,12 @@ span.fourth-text p {
 
     .sec-button {
         text-align: center;
-        margin-top: 90px;
+        /* margin-top: 90px; */
     }
 
     .button-desg img {
         width: 180px;
-        margin-top: 100px;
+        /* margin-top: 100px; */
         /* text-align: center; */
     }
 

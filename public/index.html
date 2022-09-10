@@ -33,9 +33,9 @@
                 <div class="col-md-12 first-slid">
                     <div class="button-area">
                         <a style="cursor: pointer;" class="connect_btn"><img class="button-head"
-                                src="./assets/images/head-button.png" alt=""></a>
-                        <a href="http://twitter.com/sleazy_sloths" target="_blank"><img class="social-link"
-                                src="./assets/images/twitter.png" alt=""></a>
+                                src="./assets/buttons -03.png" alt=""></a>
+                        <a href="http://twitter.com/sleazy_sloths" target="_blank"><img style="margin-top: 30px;"
+                                class="social-link" src="./assets/images/twitter.png" alt=""></a>
                     </div>
                     <div class="hero-section">
                         <div class="hero-img">
@@ -68,6 +68,28 @@
             font-size: 2rem;
             color: black;
         }
+
+        .btnImg {
+            max-width: 70px;
+            height: auto;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .row {
+            display: flex;
+        }
+
+        #mint_count{
+            color: white;
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        .btns{
+            padding-top: 20px;
+            cursor: pointer;
+        }
     </style>
     <section class="mint-section">
         <div class="row">
@@ -77,6 +99,19 @@
                         <img class="top-img" class="" src="./assets/images/second-sec-photo.png" alt="">
                     </div>
                     <div class="sec-button">
+                        <div class="plusCon col-md-2 col-xs-12 mx-auto text-center hidden">
+                            <Div class="row">
+                                <div id="decrease_btn" class="btns col-md-4 col-2 mx-auto text-center">
+                                    <img class="btnImg" src="./assets/buttons -01.png" alt="">
+                                </div>
+                                <div class="col-md-4 col-2 mx-auto text-center">
+                                    <span id="mint_count">1</span>
+                                </div>
+                                <div id="increase_btn" class="btns col-md-4 col-2 mx-auto text-center">
+                                    <img class="btnImg" src="./assets/buttons -02.png" alt="">
+                                </div>
+                            </Div>
+                        </div>
                         <!-- Timer -->
                         <h1 id="timer">
                             00D 00H 00M 00S
@@ -101,7 +136,7 @@
                         </div>
                         <div id="connect_div">
                             <a style="cursor: pointer;" class="connect_btn">
-                                <img src="./assets/images/button.png" alt="">
+                                <img src="./assets/buttons -03.png" alt="">
                             </a>
                         </div>
                     </div>
