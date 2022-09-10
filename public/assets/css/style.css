@@ -54,7 +54,7 @@ img.social-link {
     height: 100vh;
 }
 
-@media (max-width: 1440px) {
+/* @media (max-width: 1440px) {
     .hero {
         background-size: cover !important;
         height: 100% !important;
@@ -69,8 +69,8 @@ img.social-link {
         background-size: cover !important;
         height: 100% !important;
     }
-}
-
+} */
+/* 
 @media (max-width: 780px) {
     .hero {
         height: 100vh !important;
@@ -85,7 +85,7 @@ img.social-link {
         background-size: contain !important;
         height: 100vh !important;
     }
-}
+} */
 
 
 .mint-top {
