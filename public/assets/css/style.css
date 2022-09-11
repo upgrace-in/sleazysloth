@@ -13,9 +13,9 @@ body {
     overflow-x: hidden;
 }
 
-section {
+/* section {
     margin-top: -10px;
-}
+} */
 
 .button-area {
     padding: 30px 0px;
@@ -114,7 +114,7 @@ img.top-img {
 
 .hero-img img {
     width: 397px;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     padding-left: 50px;
 }
 
@@ -265,7 +265,7 @@ span.fourth-text p {
     }
 
     .button-area {
-        padding: 30px 0px;
+        padding: 0px;
         text-align: center;
     }
 
@@ -279,7 +279,7 @@ span.fourth-text p {
 
     .hero-img img {
         width: 350px;
-        margin-top: 20px;
+        /* margin-top: 20px; */
         padding-left: 16px;
     }
 
