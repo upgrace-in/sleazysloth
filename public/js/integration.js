@@ -3,6 +3,8 @@ const WalletConnectProvider = window.WalletConnectProvider.default;
 
 let web3Modal, hash_proof, provider, web3, contract, user_address, checkInterval
 
+let minting = false // turn it to true in order to activate mitning
+
 let publicMint = false
 var mint_count = 1;
 var max_count = 2;
@@ -146,14 +148,21 @@ function check() {
                     // $('#user_address').html('0xA0DB7A17B3B912c5b3bCcBAD5E9f7be910a05888')
                     $('#user_address').html(user_address)
 
-                    if (publicMint == false) {
-                        $('#WLmint_btn').show();
-                        await setting_interval();
-                    } else {
+                    if (minting == true) {
+                        if (publicMint == false) {
+                            $('#WLmint_btn').show();
+                            await setting_interval();
+                        } else {
+                            $('#Publicmint_btn').show();
+                            $('#Publicmint_btn').click(async () => {
+                                await public_Mint(mint_cost * mint_count, mint_count)
+                            })
+                        }
+                    }else{
                         $('#Publicmint_btn').show();
-                        $('#Publicmint_btn').click(async () => {
-                            await public_Mint(mint_cost * mint_count, mint_count)
-                        })
+                        $('#Publicmint_btn').click(() => {
+                            alert("Mint is inactive currently!!!")
+                        });
                     }
 
                 } else {
@@ -208,9 +217,9 @@ function set_value(type) {
         if (mint_count != 1) {
             mint_count--;
         }
-    }else{
+    } else {
         max_count = type
-        mint_count = 1    
+        mint_count = 1
     }
     $('#mint_count').html(mint_count);
 }

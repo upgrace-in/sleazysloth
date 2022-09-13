@@ -61,15 +61,16 @@
             cursor: pointer;
         }
 
-        html, body{
+        /* html,
+        body {
             overflow: hidden;
-        }
+        } */
     </style>
 </head>
 
 <body>
 
-    
+
     <div class="floatingBtns">
         <div class="col-md-12 mx-auto text-center">
             <div class="row mx-auto text-center">
@@ -168,7 +169,7 @@
 
     </section>
 
-    <section class="hidden secs roadmap-section">
+    <!-- <section class="hidden secs roadmap-section">
         <div class="row">
             <div class="col-md-12 first-slid">
                 <div class="container">
@@ -219,6 +220,70 @@
                 </div>
             </div>
         </div>
+    </section> -->
+
+    <style>
+        .floatRoadmap {
+            position: fixed;
+            top: 30px;
+
+        }
+
+        .floatRoadmap>img {
+            display: block;
+            max-width: 80%;
+            margin-right: auto;
+            margin-left: auto;
+            text-align: center;
+            height: auto;
+        }
+
+        .hide_it_now {
+            display: none;
+        }
+
+        @media (max-width: 767px) {
+            .hide_it_now {
+                display: block;
+            }
+
+            .floatRoadmap {
+                display: none;
+            }
+        }
+
+        @media (max-width: 541px) {
+            .roadmap-section{
+                height: 150vh;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .roadmap-section{
+                height: 100vh;
+            }
+        }
+
+        @media (max-width: 376px) {
+            .roadmap-section{
+                height: 110vh;
+            }
+        }
+    </style>
+
+    <section class="hidden secs roadmap-section">
+        <div class="row">
+            <div class="col-md-12 first-slid">
+                <div class="floatRoadmap">
+                    <img class="" src="./assets/object.png" alt="">
+                </div>
+                <div class="container hide_it_now">
+                    <div class="heading-png">
+                        <img class="" src="./assets/images/Roadmap_2_png.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <div style="display: none;" id="root"></div>
@@ -231,20 +296,29 @@
     <script src="js/integration.js"></script>
     <script src="js/main.js"></script>
     <style>
-        .floatingBtns{
-            position: absolute;
+        .floatingBtns {
+            position: fixed;
             bottom: 10px;
+            z-index: 2;
             width: 100%;
             padding-bottom: 20px;
         }
 
-        .btns2{
+        .btns2 {
             border-radius: 20px;
             border: 2px solid black;
-            padding: 3px 10px 3px 10px;
+            padding: 0px 20px;
+            font-size: 2rem;
             background-color: rgba(0, 0, 0, 0.612);
             color: white;
             font-weight: 700;
+        }
+
+        @media (max-width: 780px) {
+            .btns2 {
+                font-size: 1.1rem;
+                padding: 3px 10px 3px 10px;
+            }
         }
     </style>
     <script>
@@ -255,7 +329,10 @@
             const roadmapSection = $('.roadmap-section');
             const allSection = $('.secs')
 
-            homeSection.removeClass('hidden')
+            // homeSection.removeClass('hidden')
+            allSection.hide()
+            roadmapSection.addClass("animate__animated animate__slideInUp")
+            roadmapSection.show()
 
             $('#mintShowBtn').click(() => {
                 allSection.hide()
@@ -274,7 +351,7 @@
                 homeSection.addClass("animate__animated animate__slideInUp")
                 homeSection.show()
             })
-            
+
         })
     </script>
 </body>

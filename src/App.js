@@ -37,27 +37,7 @@ function App() {
         }
       }
       if (proof == null) {
-        document.getElementById('toast-error-text').innerHTML = "You are not whitelisted!";
-        document.getElementById('toast-error').classList.add('active');
-        document.getElementById('error-progress').classList.add('active');
-
-        let timer1 = setTimeout(() => {
-          document.getElementById('toast-error').classList.remove("active");
-        }, 5000);
-
-        let timer2 = setTimeout(() => {
-          document.getElementById('error-progress').classList.remove("active");
-        }, 5300);
-
-        document.querySelector(".close-er").addEventListener("click", () => {
-          document.getElementById('toast-error').classList.remove("active");
-
-          document.getElementById('error-progress').classList.remove("active");
-
-          clearTimeout(timer1);
-          clearTimeout(timer2);
-        });
-
+        alert("You are not whitelisted!");
       } else {
         $('#hash_proof').html(proof)
         $('#WLmint_btn').off()

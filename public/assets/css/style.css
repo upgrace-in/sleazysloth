@@ -48,9 +48,10 @@ img.social-link {
 }
 
 .roadmap-section {
-    background-image: url('../images/sec-2_bg.png');
+    /* background-image: url('../images/sec-2_bg.png'); */
+    background-image: url('../bg.png');
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     height: 100vh;
 }
 
