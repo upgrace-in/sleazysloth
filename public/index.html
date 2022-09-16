@@ -135,12 +135,21 @@
                             outline: none !important;
                             border: none !important;
                         }
+                        /* @media (max-width: 767px) {
+                            .rw{
+                                width: 100% !important;
+                            }
+
+                            .rw2{
+                                width: 100% !important;
+                            }
+                        } */
                     </style>
 
                     <div class="button-desg">
                         <div id="mintCon" class="">
-                            <div class="row" style="display: flex">
-                                <div class="WLMINT hidden">
+                            <!-- <div class="row rw" style="display: flex; margin-right: auto; margin-left: auto; width: 60%;">
+                                <div class="WLMINT hidden rw2" style="width: 50%;">
                                     <h1>WHITELIST MINTING</h1>
                                     <br/>
                                     <input id="WL_COUNTBOX" type="number" value="1">
@@ -150,7 +159,19 @@
                                     </a>
                                 </div>
 
-                                <div class="PUBLICMINT hidden">
+                                <div class="PUBLICMINT hidden rw2" style="width: 50%;">
+                                    <h1>PUBLIC MINTING</h1>
+                                    <br/>
+                                    <input id="PL_COUNTBOX" type="number" value="1">
+                                    <Br/>
+                                    <a class="" style="cursor: pointer;" id="Publicmint_btn">
+                                        <img src="./assets/images/button.png" alt="">
+                                    </a>
+                                </div>
+                            </div> -->
+
+                            <div class="row rw" style="display: flex; margin-right: auto; margin-left: auto;">
+                                <div class="PUBLICMINT hidden rw2">
                                     <h1>PUBLIC MINTING</h1>
                                     <br/>
                                     <input id="PL_COUNTBOX" type="number" value="1">
@@ -160,6 +181,7 @@
                                     </a>
                                 </div>
                             </div>
+
 
                             <span class='hidden' id="user_address"></span>
                             <span class='hidden' id="hash_proof"></span>
@@ -332,6 +354,12 @@
                 padding: 3px 10px 3px 10px;
             }
         }
+
+        /* @media (max-width: 767px) {
+            .top-img {
+                margin-top: 40px !important;
+            }
+        } */
     </style>
     <script>
         $(document).ready(() => {
@@ -341,7 +369,6 @@
             const roadmapSection = $('.roadmap-section');
             const allSection = $('.secs')
 
-            //needs
             homeSection.removeClass('hidden')
             // allSection.hide()
             // mintSection.addClass("animate__animated animate__slideInUp")

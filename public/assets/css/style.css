@@ -298,7 +298,7 @@ span.fourth-text p {
     .mint-section {
         background-image: url(../images/responsive_bg_two.png);
         /* background-repeat: no-repeat; */
-        background-size: cover;
+        /* background-size: cover; */
         /* height: 100vh; */
         background-position: center;
     }
