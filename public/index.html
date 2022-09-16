@@ -120,39 +120,51 @@
                         <img class="top-img" class="" src="./assets/images/second-sec-photo.png" alt="">
                     </div>
                     <div class="sec-button">
-                        <div class="plusCon col-md-2 col-xs-12 mx-auto text-center hidden">
-                            <Div class="row">
-                                <div id="decrease_btn" class="btns col-md-4 col-2 mx-auto text-center">
-                                    <img class="btnImg" src="./assets/buttons -01.png" alt="">
-                                </div>
-                                <div class="col-md-4 col-2 mx-auto text-center">
-                                    <span id="mint_count">1</span>
-                                </div>
-                                <div id="increase_btn" class="btns col-md-4 col-2 mx-auto text-center">
-                                    <img class="btnImg" src="./assets/buttons -02.png" alt="">
-                                </div>
-                            </Div>
-                        </div>
-                        <!-- Timer -->
                         <h1 id="timer">
                             00D 00H 00M 00S
                         </h1>
-                        <!-- <img class="button-head" src="./assets/images/head-button.png" alt=""> -->
                     </div>
 
-                    <div class="button-desg">
-                        <div id="mintCon" class="hidden">
+                    <style>
+                        h1{
+                            color: white;
+                        }
+                        input{
+                            border-radius: 20px;
+                            padding: 10px;
+                            outline: none !important;
+                            border: none !important;
+                        }
+                    </style>
 
-                            <a class="hidden" style="cursor: pointer;" id="WLmint_btn">
-                                <img src="./assets/images/button.png" alt="">
-                            </a>
+                    <div class="button-desg">
+                        <div id="mintCon" class="">
+                            <div class="row" style="display: flex">
+                                <div class="WLMINT hidden">
+                                    <h1>WHITELIST MINTING</h1>
+                                    <br/>
+                                    <input id="WL_COUNTBOX" type="number" value="1">
+                                    <Br/>
+                                    <a class="" style="cursor: pointer;" id="WLmint_btn">
+                                        <img src="./assets/images/button.png" alt="">
+                                    </a>
+                                </div>
+
+                                <div class="PUBLICMINT hidden">
+                                    <h1>PUBLIC MINTING</h1>
+                                    <br/>
+                                    <input id="PL_COUNTBOX" type="number" value="1">
+                                    <Br/>
+                                    <a class="" style="cursor: pointer;" id="Publicmint_btn">
+                                        <img src="./assets/images/button.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
 
                             <span class='hidden' id="user_address"></span>
                             <span class='hidden' id="hash_proof"></span>
 
-                            <a class="hidden" style="cursor: pointer;" id="Publicmint_btn">
-                                <img src="./assets/images/button.png" alt="">
-                            </a>
+
 
                         </div>
                         <div id="connect_div">
@@ -253,19 +265,19 @@
         }
 
         @media (max-width: 541px) {
-            .roadmap-section{
+            .roadmap-section {
                 height: 150vh;
             }
         }
 
         @media (max-width: 500px) {
-            .roadmap-section{
+            .roadmap-section {
                 height: 100vh;
             }
         }
 
         @media (max-width: 376px) {
-            .roadmap-section{
+            .roadmap-section {
                 height: 110vh;
             }
         }
@@ -293,7 +305,7 @@
     <script src="https://unpkg.com/web3@latest/dist/web3.min.js"></script>
     <script src="https://unpkg.com/web3modal"></script>
     <script src="https://unpkg.com/@walletconnect/web3-provider"></script>
-    <script src="js/integration.js"></script>
+    <script src="js/final.js"></script>
     <script src="js/main.js"></script>
     <style>
         .floatingBtns {
@@ -329,10 +341,11 @@
             const roadmapSection = $('.roadmap-section');
             const allSection = $('.secs')
 
+            // need
             // homeSection.removeClass('hidden')
             allSection.hide()
-            roadmapSection.addClass("animate__animated animate__slideInUp")
-            roadmapSection.show()
+            mintSection.addClass("animate__animated animate__slideInUp")
+            mintSection.show()
 
             $('#mintShowBtn').click(() => {
                 allSection.hide()
