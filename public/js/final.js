@@ -203,10 +203,11 @@ function check() {
 async function connectweb3() {
     try {
         //needs
-        // alert("Hold on a sec...")
+        
         provider = await web3Modal.connect();
         web3 = new Web3(provider);
         contract = new web3.eth.Contract(t_abi, t_address);
+        alert("Hold on a sec...")
         check()
     } catch (e) {
         console.log("Could not get a wallet connection", e);
@@ -244,7 +245,7 @@ $(document).ready(async () => {
     init();
 
     // needs
-    await connectweb3()
+    // await connectweb3()
 
     $('.connect_btn').click(async () => { await connectweb3(); })
 

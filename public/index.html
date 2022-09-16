@@ -341,25 +341,28 @@
             const roadmapSection = $('.roadmap-section');
             const allSection = $('.secs')
 
-            // need
-            // homeSection.removeClass('hidden')
-            allSection.hide()
-            mintSection.addClass("animate__animated animate__slideInUp")
-            mintSection.show()
+            //needs
+            homeSection.removeClass('hidden')
+            // allSection.hide()
+            // mintSection.addClass("animate__animated animate__slideInUp")
+            // mintSection.show()
 
             $('#mintShowBtn').click(() => {
                 allSection.hide()
                 mintSection.addClass("animate__animated animate__slideInUp")
                 mintSection.show()
+                $('#mintShowBtn').css({'opacity':'0'})
             })
 
             $('#roadmapShowBtn').click(() => {
+                $('#mintShowBtn').css({'opacity':'1'})
                 allSection.hide()
                 roadmapSection.addClass("animate__animated animate__slideInUp")
                 roadmapSection.show()
             })
 
             $('#homeShowBtn').click(() => {
+                $('#mintShowBtn').css({'opacity':'1'})
                 allSection.hide()
                 homeSection.addClass("animate__animated animate__slideInUp")
                 homeSection.show()
